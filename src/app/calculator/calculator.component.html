@@ -1,0 +1,19 @@
+<div class="contentDiv">
+<h1>A simple calculator</h1>
+<mat-card id="calculatorBody" appearance="outlined">
+    <mat-card-content>
+        <mat-card id="resultScreen">
+                <p class="calculatorScreen">
+                    {{ this.calculationString }}
+                </p>
+        </mat-card>
+            <mat-grid-list cols="4" rowHeight="100px" gutterSize="0.5rem">
+                <mat-grid-tile *ngFor="let button of calculatorButtons" (click)="addToCalculation(button)">
+                    <button mat-raised-button>
+                        <p class="calculatorButtons">{{ button }}</p>
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+</div>

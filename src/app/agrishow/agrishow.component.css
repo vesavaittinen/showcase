@@ -1,0 +1,18 @@
+.contentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+.ticketDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+}
+.materialForm {
+    width: 300px;
+    display: inline-block;
+}

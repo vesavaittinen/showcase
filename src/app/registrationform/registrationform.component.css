@@ -1,0 +1,12 @@
+.contentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.materialForm {
+    width: 550px;
+    display: inline-block;
+}

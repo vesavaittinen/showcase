@@ -1,0 +1,11 @@
+<div class="contentDiv">
+  <mat-card *ngFor="let questionItem of feedback">
+    <mat-card-content>
+      <h5>{{ questionItem.question }}</h5>
+        <mat-slider (input)="onInputChange($event, questionItem)" min="0" max="3" step="1">
+          <input matSliderThumb value="0">
+        </mat-slider>
+      <p>{{ questionItem.sliderText }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

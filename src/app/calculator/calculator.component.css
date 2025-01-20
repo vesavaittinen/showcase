@@ -1,0 +1,44 @@
+.contentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+#calculatorBody {
+    background: rgb(166, 199, 162);
+    width: 40rem;
+}
+
+#resultScreen {
+    display: flex;
+    justify-items: right;
+    justify-content: right;
+    background:rgb(216, 216, 216);
+    border-style: solid;
+    border-width: 3px;
+    width: 35rem;
+    height: 3rem;
+    margin: auto;
+    padding: 0.6rem;
+}
+
+mat-grid-tile {
+    margin: auto;
+    vertical-align: auto;
+  }
+
+#specialTile {
+    background:rgb(166, 199, 162)
+}
+
+.calculatorButtons {
+    color: rgb(29, 77, 18);
+    font-size: xx-large;
+    margin-top: 1.5rem;
+}
+
+.calculatorScreen {
+    font-size: x-large;
+}

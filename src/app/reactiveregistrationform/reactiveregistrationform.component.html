@@ -1,0 +1,101 @@
+<div class="contentDiv">
+    <h1>Reactive Registration Form</h1>
+    <mat-card>
+        <mat-card-content>
+            <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+                <p>First name</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="firstName"
+                        name="firstName"
+                    />
+                    <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
+                    <mat-error *ngIf="firstName?.hasError('minlength')">Minimum 2 characters required</mat-error>
+                    <mat-error *ngIf="firstName?.hasError('pattern')">Must be a valid name</mat-error>
+                </mat-form-field>
+                <p>Last name</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="lastName"
+                        name="lastName"
+                    />
+                    <mat-error *ngIf="lastName?.hasError('required')">Enter your last name</mat-error>
+                    <mat-error *ngIf="lastName?.hasError('minlength')">Minimum 2 characters required</mat-error>
+                    <mat-error *ngIf="lastName?.hasError('pattern')">Must be a valid name</mat-error>
+                </mat-form-field>
+                <p>Person ID</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="personid"
+                        name="personid"
+                    />
+                    <mat-error *ngIf="personid?.hasError('required')">Enter your person id</mat-error>
+                    <mat-error *ngIf="personid?.hasError('minlength')">Id too short</mat-error>
+                    <mat-error *ngIf="personid?.hasError('maxlength')">Id too long</mat-error>
+                    <mat-error *ngIf="personid?.hasError('pattern')">Must be a valid id</mat-error>
+                </mat-form-field>
+                <p>Email</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="email"
+                        name="email"
+                    />
+                    <mat-error *ngIf="email?.hasError('required')">Enter your e-mail address</mat-error>
+                    <mat-error *ngIf="email?.hasError('minlength')">Minimum 6 characters required</mat-error>
+                    <mat-error *ngIf="email?.hasError('pattern')">Needs to be a valid email address</mat-error>
+                    <mat-error *ngIf="email?.hasError('email')">Needs to be an email address</mat-error>
+                </mat-form-field>
+                <p>Username</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="userName"
+                        name="userName"
+                    />
+                    <mat-error *ngIf="userName?.hasError('required')">Enter your username</mat-error>
+                    <mat-error *ngIf="userName?.hasError('minlength')">Minimum 4 characters required</mat-error>
+                    <mat-error *ngIf="userName?.hasError('pattern')">Only numbers and alphabets accepted</mat-error>
+                </mat-form-field>
+                <p>Password</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="password"
+                        name="password"
+                    />
+                    <mat-error *ngIf="password?.hasError('required')">Enter your password</mat-error>
+                    <mat-error *ngIf="password?.hasError('minlength')">Minimum 8 characters required</mat-error>
+                    <mat-error *ngIf="password?.hasError('pattern')">Only numbers and alphabets accepted</mat-error>
+                </mat-form-field>
+                <p>Confirm password</p>
+                <mat-form-field class="materialForm" appearance="fill" hideRequiredMarker>
+                    <mat-label></mat-label>
+                    <input
+                        matInput
+                        formControlName="confpassw"
+                        name="confpassw"
+                    />
+                    <mat-error *ngIf="confpassw?.hasError('required')">Please confirm your password</mat-error>
+                    <mat-error *ngIf="confpassw?.hasError('minlength')">Minimum 8 characters required</mat-error>
+                    <mat-error *ngIf="profileForm.get('confpassw')?.errors?.['passwordCheck']">Passwords do not match</mat-error>
+                </mat-form-field>
+                <p>Accept terms and conditions</p>
+                <p>
+                    <input type="checkbox" name="checkb" required formControlName="checkb"/>
+                    <mat-error *ngIf="checkb?.hasError('required')">Please accept terms and conditions before submitting the form</mat-error>
+                </p>
+            <button mat-raised-button type="submit" [disabled]="profileForm.invalid">Submit</button>
+        </form>
+        </mat-card-content>
+    </mat-card>
+</div>
