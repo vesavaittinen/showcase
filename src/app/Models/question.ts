@@ -1,6 +1,6 @@
 export class Question {
     question: string = '';
-    sliderValues: Array<string> = ['Ei vielä arvosteltu', 'Huono', 'Ok', 'Hyvä'];
+    sliderValues: Array<string> = ['No value', 'Bad', 'Ok', 'Good'];
     sliderText: string = this.sliderValues[0];
     setFeedBack(value: any) {
            switch(value) {

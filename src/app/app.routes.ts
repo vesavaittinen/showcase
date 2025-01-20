@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'registrationform', component: RegistrationformComponent },
     { path: 'reactiveregistrationform', component: ReactiveregistrationformComponent },
     { path: 'finnkino', component: FinnkinoComponent },
-    { path: 'agri', component: AgrishowComponent },
+    { path: 'tickets', component: AgrishowComponent },
     { path: 'hello', component: HelloWorldComponent },
     { path: '**', component: PageNotFoundComponent }
 ];

@@ -8,8 +8,8 @@ export class QuestionsService {
   questions: Array<Question>;
 
   constructor() {
-    this.questions = [new Question('Onko tänään hyvä päivä?'), new Question('Oliko minkälainen asiakaspalvelukokemuksenne?'),
-       new Question('Oliko viimeisin lukemasi kirja minkälainen?'), new Question('Oliko illalla hyvä elokuva?')]
+    this.questions = [new Question('Is it a good day today?'), new Question('How do you feel now?'),
+       new Question('How was your lunch?'), new Question('How is the weather?')]
   }
 
   getQuestions() {

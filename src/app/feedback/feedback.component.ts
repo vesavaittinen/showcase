@@ -15,11 +15,11 @@ import { QuestionsService } from '../services/questions.service';
 })
 
 export class FeedbackComponent {
-  feedback: any; // alustetaan muuttuja tyypillä any (koska tämä kutsuu question-servicen metodia getQuestions(), joka palauttaa arrayn olioita)
-  constructor(private questions: QuestionsService) { // constructorissa otetaan service käyttöön
-    this.feedback = this.questions.getQuestions(); // muuttujaan feedback tallennetaan servicessä luodut oliot, joiden luokkamuuttujat (kysymys ja sliderin arvot) ovat täten käytössä
+  feedback: any; // variable type is any (because this calls the method getQuestions() in the question service, which returns an array of objects)
+  constructor(private questions: QuestionsService) { // initialize service in the constructor
+    this.feedback = this.questions.getQuestions(); // feedback contains all the objects that are created in the service
   }
-  onInputChange(event: any, sliderPart:Question) { // itse question on välitettävä parametrina, ei voi tehdä .this-viittausta
-    sliderPart.setFeedBack(event.target.value); // sliderin event.target.value on string-muodossa, vaikka se on numero
+  onInputChange(event: any, sliderPart:Question) { // question itself has to be transported as a parameter, because .this cannot be done
+    sliderPart.setFeedBack(event.target.value); // event.target.value of the slider is in string format, even if it is a number
   }
 }
