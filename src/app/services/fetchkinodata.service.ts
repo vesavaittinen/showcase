@@ -13,9 +13,9 @@ export class FetchkinodataService {
     this.url = 'https://www.finnkino.fi/xml/News/';
   }
   getFinnkinoData(): Observable<any> {
-      // pipe kokoaa operaattorit yhteen (map, filter, etc)
-      // map operaattori, tyypin muuttamiseen (esim. response => json-tyyppiseksi)
-      // filter operaattori, suodatus annetun ehdon mukaan
+      // pipe combines all operators (map, filter, etc)
+      // map operator to change the type (for example: response -> JSON type)
+      // filter operator filters according to a condition
       return this.http.get(this.url, { responseType: 'text' }).pipe(map(response => {
       let newsData: any;
       parseString(response, { trim: true, explicitArray: false, mergeAttrs: true},
