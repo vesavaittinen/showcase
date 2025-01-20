@@ -3,9 +3,9 @@
 <mat-card id="calculatorBody" appearance="outlined">
     <mat-card-content>
         <mat-card id="resultScreen">
-                <p class="calculatorScreen">
+                <span class="calculatorScreen">
                     {{ this.calculationString }}
-                </p>
+                </span>
         </mat-card>
             <mat-grid-list cols="4" rowHeight="100px" gutterSize="0.5rem">
                 <mat-grid-tile *ngFor="let button of calculatorButtons" (click)="addToCalculation(button)">

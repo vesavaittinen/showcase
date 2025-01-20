@@ -21,7 +21,11 @@
     width: 35rem;
     height: 3rem;
     margin: auto;
-    padding: 0.6rem;
+    padding: 0.1rem;
+}
+
+h1 {
+    font-family: sans-serif;
 }
 
 mat-grid-tile {
@@ -36,7 +40,7 @@ mat-grid-tile {
 .calculatorButtons {
     color: rgb(29, 77, 18);
     font-size: xx-large;
-    margin-top: 1.5rem;
+    margin-top: 1.9rem;
 }
 
 .calculatorScreen {
