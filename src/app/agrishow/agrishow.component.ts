@@ -7,7 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgIf } from '@angular/common';
-import { Ticket } from '../Models/ticket';
 
 @Component({
   selector: 'app-agrishow',
@@ -22,14 +21,12 @@ export class AgrishowComponent {
     this.formProps = this.orderService.ticketObject;
   }
   onSubmit(submittedForm: any) {
-    console.log(submittedForm.value.MTKflag);
     for (let [key, value] of Object.entries(submittedForm)) {
       console.log(`${key}: ${value}`);
     }
   }
   sumTotal() {
     let value: number;
-
   }
 }
 

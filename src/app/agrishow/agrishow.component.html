@@ -1,21 +1,21 @@
 <div class="contentDiv">
     <mat-card>
         <mat-card-content>
-            <h3>Maatalousnäyttelyn 2025 liput nyt myynnissä</h3>
+            <h3>Imaginary tickets for sale</h3>
             <form (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
                 <div class="ticketDiv">
-                    <p>Peruslippu</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.minusFromBasicTicketAmount()">-</button><span>&nbsp;&nbsp;&nbsp;</span><p>{{ formProps.basicTicketAmount }}</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.addToBasicTicketAmount()">+</button>
+                    <p>Basic ticket</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.minusFromBasicTicketAmount()">-</button><span>&nbsp;&nbsp;&nbsp;</span><p>{{ formProps.basicTicketAmount }}</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.addToBasicTicketAmount()">+</button>
                 </div>
                 <div class="ticketDiv">
-                    <p>Opiskelija</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.minusFromStudentTicketAmount()">-</button><span>&nbsp;&nbsp;&nbsp;</span><p>{{ formProps.studentTicketAmount }}</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.addToStudentTicketAmount()">+</button>
+                    <p>Student</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.minusFromStudentTicketAmount()">-</button><span>&nbsp;&nbsp;&nbsp;</span><p>{{ formProps.studentTicketAmount }}</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.addToStudentTicketAmount()">+</button>
                 </div>
                 <div class="ticketDiv">
-                    <p>Eläkeläinen</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.minusFromRetiredTicketAmount()">-</button><span>&nbsp;&nbsp;&nbsp;</span><p>{{ formProps.retiredTicketAmount }}</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.addToRetiredTicketAmount()">+</button>
+                    <p>Retired</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.minusFromRetiredTicketAmount()">-</button><span>&nbsp;&nbsp;&nbsp;</span><p>{{ formProps.retiredTicketAmount }}</p><span>&nbsp;&nbsp;&nbsp;</span><button mat-stroked-button (click)="formProps.addToRetiredTicketAmount()">+</button>
                 </div>
                 <div class="ticketDiv">
-                    <input type="checkbox" name="checkb" (click)="formProps.flipMTKBoolean()" /><span>&nbsp;</span><p>MTK:n jäsen</p><span>&nbsp;&nbsp;&nbsp;</span>
+                    <input type="checkbox" name="checkb" (click)="formProps.flipMTKBoolean()" /><span>&nbsp;</span><p>Special discount 15 %</p><span>&nbsp;&nbsp;&nbsp;</span>
                     <mat-form-field class="materialForm" appearance="fill">
-                        <mat-label>Yhteensä</mat-label>
+                        <mat-label>Total</mat-label>
                     <input
                         matInput
                         readonly
@@ -24,10 +24,10 @@
                     </mat-form-field>
                 </div>
                 <hr>
-                <h5>Täytä tilaajan tiedot</h5>
+                <h5>Fill in order information</h5>
                 <div>
                 <mat-form-field class="materialForm" appearance="fill">
-                    <mat-label>Etunimi</mat-label>
+                    <mat-label>First name</mat-label>
                     <input
                         matInput
                         [(ngModel)]="formProps.firstName"
@@ -35,14 +35,14 @@
                         name="firstName"
                         required minlength=2 pattern="^[a-zA-ZÀ-ȕ \-]*$"
                     />
-                    <mat-error *ngIf="fname.hasError('required')">Anna etunimi</mat-error>
-                    <mat-error *ngIf="fname.hasError('minlength')">Vähintään 2 merkkiä vaaditaan</mat-error>
-                    <mat-error *ngIf="fname.hasError('pattern')">Nimessä täytyy olla vain kirjaimia</mat-error>
+                    <mat-error *ngIf="fname.hasError('required')">Please give a first name</mat-error>
+                    <mat-error *ngIf="fname.hasError('minlength')">Minimum of 2 characters required</mat-error>
+                    <mat-error *ngIf="fname.hasError('pattern')">Only letters, please</mat-error>
                 </mat-form-field>
                 </div>
                 <div>
                 <mat-form-field class="materialForm" appearance="fill">
-                    <mat-label>Sukunimi</mat-label>
+                    <mat-label>Last name</mat-label>
                     <input
                         matInput
                         [(ngModel)]="formProps.lastName"
@@ -50,15 +50,15 @@
                         name="lastName"
                         required minlength=2 pattern="^[a-zA-ZÀ-ȕ \-]*$"
                     />
-                        <mat-error *ngIf="lname.hasError('required')">Anna sukunimi</mat-error>
-                        <mat-error *ngIf="lname.hasError('minlength')">Vähintään 2 merkkiä vaaditaan</mat-error>
-                        <mat-error *ngIf="lname.hasError('pattern')">Nimessä täytyy olla vain kirjaimia</mat-error>
+                        <mat-error *ngIf="lname.hasError('required')">Please give a surname</mat-error>
+                        <mat-error *ngIf="lname.hasError('minlength')">Minimum of 2 characters required</mat-error>
+                        <mat-error *ngIf="lname.hasError('pattern')">Only letters, please</mat-error>
                 </mat-form-field>
                 </div>  
-                <p>Liput lähetetään sähköpostiosoitteeseen</p>
+                <p>Tickets will be sent to a following email address</p>
                 <div>
                 <mat-form-field class="materialForm" appearance="fill">
-                    <mat-label>Sähköposti</mat-label>
+                    <mat-label>Email</mat-label>
                     <input
                         matInput
                         [(ngModel)]="formProps.email"
@@ -66,14 +66,14 @@
                         name="email"
                         required email minlength=6 pattern="^[@a-zA-Z \.]*$"
                     />
-                        <mat-error *ngIf="email.hasError('required')">Syötä sähköpostiosoite</mat-error>
-                        <mat-error *ngIf="email.hasError('minlength')">Sähköpostiosoitteessa on vähintään 6 merkkiä</mat-error>
-                        <mat-error *ngIf="email.hasError('pattern')">Tarkista sähköpostiosoite</mat-error>
-                        <mat-error *ngIf="email.hasError('email')">Varmista että kentässä on sähköpostiosoite</mat-error>
+                        <mat-error *ngIf="email.hasError('required')">Please give an email address</mat-error>
+                        <mat-error *ngIf="email.hasError('minlength')">An email must contain at least 6 characters</mat-error>
+                        <mat-error *ngIf="email.hasError('pattern')">Please verify your email address</mat-error>
+                        <mat-error *ngIf="email.hasError('email')">Please input a valid email address</mat-error>
                 </mat-form-field>
                 </div>
                 <div>
-                    <button mat-raised-button type="submit" [disabled]="templateForm.invalid">Osta liput</button>
+                    <button mat-raised-button type="submit" [disabled]="templateForm.invalid">Buy tickets</button>
                 </div>
             </form>
         </mat-card-content>
