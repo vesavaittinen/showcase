@@ -1,0 +1,14 @@
+.contentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+#textCardBody {
+    background: rgb(151, 196, 255);
+    width: 40rem;
+}
+#textCard {
+    padding: 1rem;
+}
