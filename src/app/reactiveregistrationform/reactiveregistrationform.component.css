@@ -7,6 +7,12 @@
 }
 
 .materialForm {
-    width: 550px;
-    display: inline-block;
+    width: 27rem;
+    max-width: 27rem;
+    min-width: 26rem;
+}
+#textCardBody {
+    max-width: 40rem;
+    min-width: 10rem;
+    padding: 0.5rem;
 }

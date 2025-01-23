@@ -75,10 +75,6 @@ mat-grid-tile {
     position: relative;
   }
 
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
   .loginButton {
     display: flex;
     margin: auto;

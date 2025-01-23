@@ -7,6 +7,7 @@
 }
 
 .materialForm {
-    width: 550px;
-    display: inline-block;
+    width: 27rem;
+    max-width: 27rem;
+    min-width: 26rem;
 }
