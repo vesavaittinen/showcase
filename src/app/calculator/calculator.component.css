@@ -34,8 +34,6 @@ h1 {
 }
 
 mat-grid-tile {
-    min-width: 10%;
-    max-width: 20%;
     margin: auto;
     vertical-align: auto;
   }
