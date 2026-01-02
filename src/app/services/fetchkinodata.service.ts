@@ -12,7 +12,7 @@ export class FetchkinodataService {
   constructor(private http: HttpClient) {
     this.url = 'https://www.finnkino.fi/xml/News/';
   }
-  getFinnkinoData(): Observable<any> {
+  getFinnkinoData(): signal<any> {
       // pipe combines all operators (map, filter, etc)
       // map operator to change the type (for example: response -> JSON type)
       // filter operator filters according to a condition
