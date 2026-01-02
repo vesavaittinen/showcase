@@ -6,12 +6,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-agrishow',
   standalone: true,
-  imports: [ MatCardModule, MatButtonModule, MatCheckboxModule, MatInputModule, FormsModule, MatFormFieldModule, NgIf ],
+  imports: [MatCardModule, MatButtonModule, MatCheckboxModule, MatInputModule, FormsModule, MatFormFieldModule],
   templateUrl: './agrishow.component.html',
   styleUrl: './agrishow.component.css'
 })

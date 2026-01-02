@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
-import { CommonModule } from '@angular/common';
+
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -12,7 +12,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 @Component({
   selector: 'app-reactiveregistrationform',
   standalone: true,
-  imports: [ NgIf, CommonModule, MatButtonModule, MatCardModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule ],
+  imports: [MatButtonModule, MatCardModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule],
   templateUrl: './reactiveregistrationform.component.html',
   styleUrl: './reactiveregistrationform.component.css'
 })

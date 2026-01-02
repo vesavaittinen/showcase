@@ -6,14 +6,16 @@
         [(ngModel)]="searchString"
         #search="ngModel"
         name="searchString" />
-    </mat-form-field>
-  </form>
-  <mat-accordion>
-    <mat-expansion-panel *ngFor="let item of finnkinoData$ | async | searchFilter: searchString">
-      <mat-expansion-panel-header>
-        <mat-panel-title><p>{{ item.PublishDate | date:'dd.LL.yyyy' }} &nbsp;&nbsp;&nbsp; {{ item.Title }}</p></mat-panel-title>
-      </mat-expansion-panel-header>
-      {{ item.HTMLLead }}
-    </mat-expansion-panel>
-  </mat-accordion>
-</div>
+      </mat-form-field>
+    </form>
+    <mat-accordion>
+      @for (item of finnkinoData$ | async | searchFilter: searchString; track item) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><p>{{ item.PublishDate | date:'dd.LL.yyyy' }} &nbsp;&nbsp;&nbsp; {{ item.Title }}</p></mat-panel-title>
+          </mat-expansion-panel-header>
+          {{ item.HTMLLead }}
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </div>

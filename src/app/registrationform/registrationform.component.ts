@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ChangeDetectionStrategy, model} from '@angular/core';
-import { NgIf } from '@angular/common';
-import { CommonModule } from '@angular/common'
+
+
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,7 +13,7 @@ import { Person } from '../Models/person';
 @Component({
   selector: 'app-registrationform',
   standalone: true,
-  imports: [ FormsModule, NgIf, MatCheckboxModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatCardModule, CommonModule ],
+  imports: [FormsModule, MatCheckboxModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatCardModule],
   templateUrl: './registrationform.component.html',
   styleUrls: ['./registrationform.component.css', '../../styles.css'],
 })

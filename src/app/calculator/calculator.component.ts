@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -8,7 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 @Component({
   selector: 'app-calculator',
   standalone: true,
-  imports: [RouterModule, MatCardModule, MatGridListModule, MatButtonModule, NgFor],
+  imports: [RouterModule, MatCardModule, MatGridListModule, MatButtonModule],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.css'
 })
