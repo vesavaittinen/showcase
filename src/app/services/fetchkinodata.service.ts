@@ -3,16 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { parseString } from 'xml2js';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FetchkinodataService {
+  private http = inject(HttpClient);  
   url: any;
-  constructor(private http: HttpClient) {
+  
+  constructor() {
     this.url = 'https://www.finnkino.fi/xml/News/';
   }
-  getFinnkinoData(): signal<any> {
+  getFinnkinoData(): Observable<any> {
       // pipe combines all operators (map, filter, etc)
       // map operator to change the type (for example: response -> JSON type)
       // filter operator filters according to a condition
