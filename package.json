@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^21.0.6",
     "@angular/platform-browser-dynamic": "^21.0.6",
     "@angular/router": "^21.0.6",
+    "events": "^3.3.0",
     "rxjs": "~7.8.0",
     "stream": "^0.0.3",
     "timers": "^0.1.1",

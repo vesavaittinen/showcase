@@ -9,13 +9,11 @@
       </mat-form-field>
     </form>
     <mat-accordion>
-      @for (item of finnkinoData$ | async | searchFilter: searchString; track item) {
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <mat-panel-title><p>{{ item.PublishDate | date:'dd.LL.yyyy' }} &nbsp;&nbsp;&nbsp; {{ item.Title }}</p></mat-panel-title>
+            <mat-panel-title><p> &nbsp;&nbsp;&nbsp; </p></mat-panel-title>
           </mat-expansion-panel-header>
-          {{ item.HTMLLead }}
+          {{ finnkinoData$ }}
         </mat-expansion-panel>
-      }
     </mat-accordion>
   </div>
