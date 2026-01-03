@@ -11,11 +11,13 @@ import { inject } from '@angular/core';
 export class FetchkinodataService {
   private http = inject(HttpClient);  
   url: any;
+  jokeObject = new Object;
+  joke: string = '';
   
   constructor() {
-    this.url = 'https://api.chucknorris.io/jokes/random';
+    this.url = "https://api.chucknorris.io/jokes/random";
   }
   getFinnkinoData(): Observable<any> {
-      return this.http.get<any[]>(this.url);
+      return this.http.get(this.url);
   }
 }

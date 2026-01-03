@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common'
 import { Observable, of } from 'rxjs';
 import { FetchkinodataService } from '../services/fetchkinodata.service';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { signal } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SearchFilter } from '../pipes/searchFilter.pipe';
+import { effect, inject, signal } from '@angular/core';
 
 @Component({
   selector: 'app-finnkino',
@@ -19,13 +19,24 @@ export class FinnkinoComponent {
 
   searchString: string = '';
   readonly panelOpenState = signal(false); // for the mat-expansion panel
-  finnkinoData$: Observable<any>;
+  jokeData$: any[] = [];
+  norrisJoke = new Observable<any>;
+  norrisText: string = '';
+  private kinoService = inject(FetchkinodataService);
 
 ngOnInit(): void {
-  this.finnkinoData$ = this.kinoService.getFinnkinoData();
   }
+  
+  //this.observe.forEach((value) => {
+   // this.finnkinoData$.push(value);
+  //})
+//    data => this.finnkinoData$ = data,
+//    error => console.error('Cannot get data: ', error)
+//  );
 
-  constructor (private kinoService: FetchkinodataService) {
-    this.finnkinoData$ = new Observable<any>();
+  constructor() {
+    effect(() => {
+      this.norrisJoke = this.kinoService.getFinnkinoData();
+  })
   }
 }
