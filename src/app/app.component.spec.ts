@@ -2,13 +2,14 @@ import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RouterTestingHarness } from '@angular/router/testing';
+import { routes } from './app.routes';
 import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
-      providers: [ provideRouter([{path: '/', component: AppComponent}])],
+      providers: [ provideRouter(routes)],
     }).compileComponents();
   });
 
